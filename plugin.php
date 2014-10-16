@@ -3,7 +3,7 @@
 Plugin Name: TheLink_Widget
 Plugin URI: http://github.com/ritstudentgovernment/TheLink_Widget
 Description: Displays "The Link" badge in a specified location.
-Version: 0.3
+Version: 0.4
 Author: Colum McGaley
 Author URI: http://volf.co
 License: GPLv3
@@ -45,7 +45,15 @@ License: GPLv3
             } else {
                 $link_name = '';
             }
-            echo "<p><label for='".$this->get_field_id('link_name')."'>Link URL</label><input id='".$this->get_field_id('link_name')."' name='".$this->get_field_name('link_name')."' type='text' value='$link_name' /></p>";
+            echo "<p> ";
+            echo "You should not need to change this. Values are automatically pulled from the site URL. If your site ";
+            echo "URL is not the same as your organization name on the Link, you can manually define it below. <br />";
+            echo "<br /> For example, if your site name is: <em>".network_site_url()."</em><strong>MyAmazingClub</strong>";
+            echo ", but on the link your club name is <strong>AmazingClub</strong>, put <strong>AmazingClub</strong>";
+            echo " below. <br /><br /> <label for='".$this->get_field_id('link_name')."'>Link URL: </label>";
+            echo "<input id='".$this->get_field_id('link_name')."' name='".$this->get_field_name('link_name');
+            echo "' type='text' value='$link_name' />";
+            echo "</p>";
         }
 
         function update($new_instance, $old_instance){
