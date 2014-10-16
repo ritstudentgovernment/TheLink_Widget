@@ -11,7 +11,7 @@ License: GPLv3
 
 /*
     TheLink_Widget.
-    Copyright (C) 2014  Colum McGaley <c.mcgaley@gmail.com>
+    Copyright (C) 2014  Colum McGaley <colum@volf.co>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -74,13 +74,14 @@ License: GPLv3
                     }
                     $link_url = $this->link_url; // If there is defined site, just link to the link
                 }
+                $link_url = $this->link_url . "organization/" . $site_url_str;
             } else {
                 $site_url_str = $text;
                 $link_url = $this->link_url . "organization/" . $site_url_str;
             }
 
 
-            $img_url = plugins_url( 'assets/thelink.png', __FILE__ );
+            $img_url = plugins_url( 'thelink.png', __FILE__ );
             $img_tag = "<a href='$link_url'><img style='max-width: 100%;' src='$img_url' alt='Visit $site_name on the Link!' /></a>";
 
             echo "<div style='text-align: center'>$img_tag</div>";
